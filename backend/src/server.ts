@@ -1,14 +1,16 @@
-const express = require('express');
+import express, { Request, Response } from 'express';
+import { login } from './controllers/authController';
 
 const app = express();
 const PORT = 3000;
 
-// Middleware para ler JSON no corpo das requisições
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.json({ mensagem: "Rota inválida" });
 });
+
+app.post('/login', login);
 
 app.listen(PORT, () => {
   console.log(`Servidor executando em http://localhost:${PORT}`);
