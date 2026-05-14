@@ -28,19 +28,28 @@ export const isValidType = (tipo: string) =>
   tipo in IOF;
 
 export const calcularIOF = (valor: number, tipo: string) => {
+  if (valor < 0) throw new Error('Valor não pode ser negativo');
   const aliquota = IOF[tipo];
+  if (aliquota === undefined) throw new Error(`Tipo "${tipo}" inválido`);
   return { valor: valor * aliquota, aliquota };
 };
 
-export const calcularTaxaServico = (valor: number) =>
-  valor * SERVICE_TAX;
+export const calcularTaxaServico = (valor: number) => {
+  if (valor < 0) throw new Error('Valor não pode ser negativo');
+  return valor * SERVICE_TAX;
+};
 
-export const calcularSpread = (valor: number, spread: number) =>
-  valor * spread;
+export const calcularSpread = (valor: number, spread: number) => {
+  if (valor < 0)  throw new Error('Valor não pode ser negativo');
+  if (spread < 0) throw new Error('Spread não pode ser negativo');
+  return valor * spread;
+};
 
 export const calcularConversao = (valor: number, codigo: string, tipo: string) => {
+  if (valor <= 0) throw new Error('Valor deve ser maior que zero');
   const moeda = getCurrency(codigo);
   if (!moeda) throw new Error(`Moeda "${codigo}" não encontrada`);
+  if (!isValidType(tipo)) throw new Error(`Tipo "${tipo}" inválido`);
 
   const iof              = calcularIOF(valor, tipo);
   const taxaServico      = calcularTaxaServico(valor);
@@ -63,7 +72,7 @@ export const calcularConversao = (valor: number, codigo: string, tipo: string) =
     },
     valor_efetivo_brl: parseFloat(valorEfetivo.toFixed(2)),
     cotacao: {
-      base:       moeda!.cotacao,
+      base:       moeda.cotacao,
       com_spread: parseFloat(cotacaoComSpread.toFixed(4)),
     },
     valor_convertido: parseFloat(valorConvertido.toFixed(4)),
