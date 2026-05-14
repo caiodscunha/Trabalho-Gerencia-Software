@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
-import { login } from './controllers/authController';
+import { auth, login } from './controllers/authController';
+import { exchangeCurrency, listCurrency } from './controllers/currencyExchangeController';
 
 const app = express();
 const PORT = 3000;
@@ -11,6 +12,12 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.post('/login', login);
+
+app.post('/auth', auth);
+
+app.get('/listCurrency', listCurrency);
+
+app.post('/exchange', exchangeCurrency);
 
 app.listen(PORT, () => {
   console.log(`Servidor executando em http://localhost:${PORT}`);

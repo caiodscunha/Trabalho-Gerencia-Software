@@ -10,3 +10,14 @@ export const login = (req: Request, res: Response) => {
 
   res.json({ token: 'token-simulado-123' });
 };
+
+export const auth = (req: Request, res: Response) => {
+  const { token } = req.body;
+
+  if (token !== 'token-simulado-123') {
+    res.status(401).json({ erro: 'Token inválido' });
+    return;
+  }
+
+  res.json({ token: 'token-simulado-123' });
+};
