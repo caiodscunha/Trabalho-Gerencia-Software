@@ -5,4 +5,8 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tests/tsconfig.json' }],
   },
+  reporters: [
+    'default',
+    ['jest-junit', { outputDirectory: '.', outputName: 'junit.xml' }],
+  ],
 };
