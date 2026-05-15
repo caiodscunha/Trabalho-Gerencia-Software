@@ -1,10 +1,14 @@
 import express, { Request, Response, Router } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 import { auth, login } from './controllers/authController';
 import { exchangeCurrency, listCurrency } from './controllers/currencyExchangeController';
 
 const app = express();
 const router = Router();
 
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 
 app.get('/health', (_req: Request, res: Response) => {
