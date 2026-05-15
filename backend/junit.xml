@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="92" failures="0" errors="0" time="1.997">
+  <testsuite name="authService" errors="0" failures="0" skipped="0" timestamp="2026-05-15T18:20:25" time="0.983" tests="12">
+    <testcase classname="authService validateCredentials retorna true para usuário e senha corretos" name="authService validateCredentials retorna true para usuário e senha corretos" time="0.005">
+    </testcase>
+    <testcase classname="authService validateCredentials retorna false para usuário errado" name="authService validateCredentials retorna false para usuário errado" time="0">
+    </testcase>
+    <testcase classname="authService validateCredentials retorna false para senha errada" name="authService validateCredentials retorna false para senha errada" time="0.001">
+    </testcase>
+    <testcase classname="authService validateCredentials retorna false para ambos errados" name="authService validateCredentials retorna false para ambos errados" time="0">
+    </testcase>
+    <testcase classname="authService validateCredentials retorna false para strings vazias" name="authService validateCredentials retorna false para strings vazias" time="0.001">
+    </testcase>
+    <testcase classname="authService validateCredentials é case-sensitive" name="authService validateCredentials é case-sensitive" time="0.003">
+    </testcase>
+    <testcase classname="authService generateToken retorna um token não vazio" name="authService generateToken retorna um token não vazio" time="0.001">
+    </testcase>
+    <testcase classname="authService generateToken retorna sempre o mesmo token" name="authService generateToken retorna sempre o mesmo token" time="0">
+    </testcase>
+    <testcase classname="authService validateToken retorna true para o token válido" name="authService validateToken retorna true para o token válido" time="0">
+    </testcase>
+    <testcase classname="authService validateToken retorna false para token inválido" name="authService validateToken retorna false para token inválido" time="0">
+    </testcase>
+    <testcase classname="authService validateToken retorna false para string vazia" name="authService validateToken retorna false para string vazia" time="0.001">
+    </testcase>
+    <testcase classname="authService validateToken retorna false para token com espaço extra" name="authService validateToken retorna false para token com espaço extra" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="currencyExchangeService" errors="0" failures="0" skipped="0" timestamp="2026-05-15T18:20:25" time="1.026" tests="55">
+    <testcase classname="currencyExchangeService getCurrency retorna a moeda para código válido em maiúsculo" name="currencyExchangeService getCurrency retorna a moeda para código válido em maiúsculo" time="0.005">
+    </testcase>
+    <testcase classname="currencyExchangeService getCurrency retorna a moeda para código válido em minúsculo" name="currencyExchangeService getCurrency retorna a moeda para código válido em minúsculo" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService getCurrency retorna null para código inexistente" name="currencyExchangeService getCurrency retorna null para código inexistente" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService getCurrency retorna null para string vazia" name="currencyExchangeService getCurrency retorna null para string vazia" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService getAvailableCurrencies retorna exatamente 5 moedas" name="currencyExchangeService getAvailableCurrencies retorna exatamente 5 moedas" time="0.002">
+    </testcase>
+    <testcase classname="currencyExchangeService getAvailableCurrencies contém USD, EUR, GBP, JPY e ARS" name="currencyExchangeService getAvailableCurrencies contém USD, EUR, GBP, JPY e ARS" time="0.008">
+    </testcase>
+    <testcase classname="currencyExchangeService getAvailableCurrencies cada moeda tem codigo, nome, cotacao_brl e spread" name="currencyExchangeService getAvailableCurrencies cada moeda tem codigo, nome, cotacao_brl e spread" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService getAvailableCurrencies retorna os valores corretos para USD" name="currencyExchangeService getAvailableCurrencies retorna os valores corretos para USD" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService getAvailableCurrencies retorna os valores corretos para ARS" name="currencyExchangeService getAvailableCurrencies retorna os valores corretos para ARS" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService getAvailableCurrencies spread é formatado como percentual" name="currencyExchangeService getAvailableCurrencies spread é formatado como percentual" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService isValidType retorna true para &quot;comercial&quot;" name="currencyExchangeService isValidType retorna true para &quot;comercial&quot;" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService isValidType retorna true para &quot;turism&quot;" name="currencyExchangeService isValidType retorna true para &quot;turism&quot;" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService isValidType retorna false para tipo inexistente" name="currencyExchangeService isValidType retorna false para tipo inexistente" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService isValidType retorna false para string vazia" name="currencyExchangeService isValidType retorna false para string vazia" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF aplica alíquota exata de 0.38% para comercial" name="currencyExchangeService calcularIOF aplica alíquota exata de 0.38% para comercial" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF aplica alíquota exata de 6.38% para turism" name="currencyExchangeService calcularIOF aplica alíquota exata de 6.38% para turism" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF calcula corretamente para R$500 comercial: 500 × 0.38% = R$1.90" name="currencyExchangeService calcularIOF calcula corretamente para R$500 comercial: 500 × 0.38% = R$1.90" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF calcula corretamente para R$2500 turism: 2500 × 6.38% = R$159.50" name="currencyExchangeService calcularIOF calcula corretamente para R$2500 turism: 2500 × 6.38% = R$159.50" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF IOF de turism é ~16.8× maior que comercial" name="currencyExchangeService calcularIOF IOF de turism é ~16.8× maior que comercial" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF IOF é zero para valor zero" name="currencyExchangeService calcularIOF IOF é zero para valor zero" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF lança erro para valor negativo" name="currencyExchangeService calcularIOF lança erro para valor negativo" time="0.012">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF lança erro para tipo inválido" name="currencyExchangeService calcularIOF lança erro para tipo inválido" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularIOF lança erro para tipo vazio" name="currencyExchangeService calcularIOF lança erro para tipo vazio" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularTaxaServico R$1000 → R$20.00 (2%)" name="currencyExchangeService calcularTaxaServico R$1000 → R$20.00 (2%)" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularTaxaServico R$250 → R$5.00 (2%)" name="currencyExchangeService calcularTaxaServico R$250 → R$5.00 (2%)" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularTaxaServico R$1500 → R$30.00 (2%)" name="currencyExchangeService calcularTaxaServico R$1500 → R$30.00 (2%)" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularTaxaServico retorna zero para valor zero" name="currencyExchangeService calcularTaxaServico retorna zero para valor zero" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularTaxaServico dobrar o valor dobra a taxa" name="currencyExchangeService calcularTaxaServico dobrar o valor dobra a taxa" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularTaxaServico lança erro para valor negativo" name="currencyExchangeService calcularTaxaServico lança erro para valor negativo" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread R$1000 com spread USD (1.5%) → R$15.00" name="currencyExchangeService calcularSpread R$1000 com spread USD (1.5%) → R$15.00" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread R$1000 com spread EUR (2.0%) → R$20.00" name="currencyExchangeService calcularSpread R$1000 com spread EUR (2.0%) → R$20.00" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread R$1000 com spread GBP (2.5%) → R$25.00" name="currencyExchangeService calcularSpread R$1000 com spread GBP (2.5%) → R$25.00" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread R$1000 com spread JPY (3.0%) → R$30.00" name="currencyExchangeService calcularSpread R$1000 com spread JPY (3.0%) → R$30.00" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread R$1000 com spread ARS (5.0%) → R$50.00" name="currencyExchangeService calcularSpread R$1000 com spread ARS (5.0%) → R$50.00" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread retorna zero para valor zero" name="currencyExchangeService calcularSpread retorna zero para valor zero" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread retorna zero para spread zero" name="currencyExchangeService calcularSpread retorna zero para spread zero" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread lança erro para valor negativo" name="currencyExchangeService calcularSpread lança erro para valor negativo" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularSpread lança erro para spread negativo" name="currencyExchangeService calcularSpread lança erro para spread negativo" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao USD comercial R$1000: descontos corretos" name="currencyExchangeService calcularConversao USD comercial R$1000: descontos corretos" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao USD comercial R$1000: valor efetivo = R$961.20" name="currencyExchangeService calcularConversao USD comercial R$1000: valor efetivo = R$961.20" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao USD comercial R$1000: cotação base=5.25, com spread≈5.3288" name="currencyExchangeService calcularConversao USD comercial R$1000: cotação base=5.25, com spread≈5.3288" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao USD comercial R$1000: valor convertido = 180.38 USD" name="currencyExchangeService calcularConversao USD comercial R$1000: valor convertido = 180.38 USD" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao USD turism R$1000: IOF = R$63.80" name="currencyExchangeService calcularConversao USD turism R$1000: IOF = R$63.80" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao USD turism R$1000: valor convertido ≈ 169.12 USD" name="currencyExchangeService calcularConversao USD turism R$1000: valor convertido ≈ 169.12 USD" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao EUR comercial R$1000: descontos corretos" name="currencyExchangeService calcularConversao EUR comercial R$1000: descontos corretos" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao EUR comercial R$1000: cotação com spread = 5.814" name="currencyExchangeService calcularConversao EUR comercial R$1000: cotação com spread = 5.814" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao GBP comercial R$1000: descontos corretos" name="currencyExchangeService calcularConversao GBP comercial R$1000: descontos corretos" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao ARS comercial R$1000: spread alto (5%) = R$50.00" name="currencyExchangeService calcularConversao ARS comercial R$1000: spread alto (5%) = R$50.00" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao turism tem mais desconto que comercial para qualquer moeda" name="currencyExchangeService calcularConversao turism tem mais desconto que comercial para qualquer moeda" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao alíquota de IOF aparece correta na resposta" name="currencyExchangeService calcularConversao alíquota de IOF aparece correta na resposta" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao código da moeda é retornado em maiúsculo" name="currencyExchangeService calcularConversao código da moeda é retornado em maiúsculo" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao lança erro para moeda inexistente" name="currencyExchangeService calcularConversao lança erro para moeda inexistente" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao lança erro para valor negativo" name="currencyExchangeService calcularConversao lança erro para valor negativo" time="0">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao lança erro para valor zero" name="currencyExchangeService calcularConversao lança erro para valor zero" time="0.001">
+    </testcase>
+    <testcase classname="currencyExchangeService calcularConversao lança erro para tipo inválido" name="currencyExchangeService calcularConversao lança erro para tipo inválido" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET /health" errors="0" failures="0" skipped="0" timestamp="2026-05-15T18:20:25" time="1.275" tests="25">
+    <testcase classname="GET /health deve retornar status ok" name="GET /health deve retornar status ok" time="0.018">
+    </testcase>
+    <testcase classname="POST /exg/login deve retornar token com credenciais válidas" name="POST /exg/login deve retornar token com credenciais válidas" time="0.012">
+    </testcase>
+    <testcase classname="POST /exg/login deve retornar 401 com usuário errado" name="POST /exg/login deve retornar 401 com usuário errado" time="0.005">
+    </testcase>
+    <testcase classname="POST /exg/login deve retornar 401 com senha errada" name="POST /exg/login deve retornar 401 com senha errada" time="0.005">
+    </testcase>
+    <testcase classname="POST /exg/login deve retornar 401 sem body" name="POST /exg/login deve retornar 401 sem body" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/auth deve validar token correto" name="POST /exg/auth deve validar token correto" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/auth deve retornar 401 para token inválido" name="POST /exg/auth deve retornar 401 para token inválido" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/auth deve retornar 401 para token vazio" name="POST /exg/auth deve retornar 401 para token vazio" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/auth o token retornado pelo login deve ser aceito no auth" name="POST /exg/auth o token retornado pelo login deve ser aceito no auth" time="0.008">
+    </testcase>
+    <testcase classname="GET /exg/listCurrency deve retornar lista de moedas" name="GET /exg/listCurrency deve retornar lista de moedas" time="0.004">
+    </testcase>
+    <testcase classname="GET /exg/listCurrency cada moeda deve ter os campos obrigatórios" name="GET /exg/listCurrency cada moeda deve ter os campos obrigatórios" time="0.005">
+    </testcase>
+    <testcase classname="GET /exg/listCurrency deve conter USD, EUR e GBP" name="GET /exg/listCurrency deve conter USD, EUR e GBP" time="0.005">
+    </testcase>
+    <testcase classname="GET /exg/listCurrency cotacao_brl deve ser um número positivo" name="GET /exg/listCurrency cotacao_brl deve ser um número positivo" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve realizar câmbio USD comercial" name="POST /exg/exchange deve realizar câmbio USD comercial" time="0.005">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve realizar câmbio EUR turismo" name="POST /exg/exchange deve realizar câmbio EUR turismo" time="0.003">
+    </testcase>
+    <testcase classname="POST /exg/exchange câmbio turismo deve ter IOF maior que câmbio comercial" name="POST /exg/exchange câmbio turismo deve ter IOF maior que câmbio comercial" time="0.006">
+    </testcase>
+    <testcase classname="POST /exg/exchange resposta deve conter estrutura completa de descontos" name="POST /exg/exchange resposta deve conter estrutura completa de descontos" time="0.005">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 401 sem token" name="POST /exg/exchange deve retornar 401 sem token" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 401 com token inválido" name="POST /exg/exchange deve retornar 401 com token inválido" time="0.003">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 400 sem currencyCode" name="POST /exg/exchange deve retornar 400 sem currencyCode" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 400 com valor zero" name="POST /exg/exchange deve retornar 400 com valor zero" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 400 com valor negativo" name="POST /exg/exchange deve retornar 400 com valor negativo" time="0.003">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 400 com tipo inválido" name="POST /exg/exchange deve retornar 400 com tipo inválido" time="0.004">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve retornar 404 para moeda inexistente" name="POST /exg/exchange deve retornar 404 para moeda inexistente" time="0.003">
+    </testcase>
+    <testcase classname="POST /exg/exchange deve aceitar currencyCode em minúsculo" name="POST /exg/exchange deve aceitar currencyCode em minúsculo" time="0.004">
+    </testcase>
+  </testsuite>
+</testsuites>
